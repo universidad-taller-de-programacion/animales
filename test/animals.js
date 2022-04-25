@@ -56,7 +56,8 @@ describe("Lista de animales", () => {
     it("determina los resultados utilizando Array.filter", () => {
       const animales = [...animalesZoo];
       chai.spy.on(animales,'filter')
-      const resultado = animales.filter(animal => animal === 'loro')
+      const resultado = animales.filter(animal => animal.tipo === 'loro')
+      console.log(resultado);
       expect(animales.filter).to.have.been.called();
     });
   });
